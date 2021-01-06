@@ -139,7 +139,7 @@
     }
     }
     .today_info{
-        background: #333;
+        background-color:#a03535;
         color: white;
         display: flex;
         width: 200px;
@@ -338,6 +338,7 @@
 }
 .hideImages{
     display: none;
+    margin-top: 10px;
     @media(max-width:786px){
         display: block;
         padding: 5px;
