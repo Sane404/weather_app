@@ -1,0 +1,15 @@
+.nav{
+    padding: 10px;
+    z-index: 999;
+    display: flex;
+    background-color: #a03535;
+    a{
+        text-decoration: none;
+        color: white;
+        font-size: 20px;
+        margin-left: 10px;
+    }
+}
+.nav a:first-child{
+    margin-left: 0 !important;
+}

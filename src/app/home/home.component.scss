@@ -1,0 +1,130 @@
+nav{
+    width: 100%;
+    display: flex;
+    height: calc(100vh - 44px);
+    position: relative;
+    @media(max-width:786px){
+        flex-direction: column;
+    }
+    .left_side{
+        background-image: url('../../assets/europe.svg');
+        flex-basis: 100%;
+        animation: bgmove 10s forwards ease-in-out infinite;
+        position: relative;
+        .text_box{
+            position: absolute;
+            top: 50%;
+            
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 60%;
+            @media(max-width:786px){
+                width: 80%;
+            }
+            h2{
+                font-size: 20px;
+                text-transform: uppercase;
+                color:#a03535;
+            }
+            p{
+                margin: 10px 0;
+                font-size: 16px;
+            }
+            button{
+                padding: 5px 15px;
+                font-size: 20px;
+                background-color: #a03535;
+                border: 2px solid #a03535;
+                color: white;
+                
+                transition: color 1s,background-color 1s;
+                &:hover{
+                    
+                    background-color: white;
+                    color:black;
+                }
+            }
+        }
+    }
+    .right_side{
+        flex-basis: 100%;
+        background-image: url('../../assets/city_bg.jpg');
+        background-size: cover;
+        position: relative;
+        .text_box{
+            position: absolute;
+            top: 50%;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 10px;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 60%;
+            @media(max-width:786px){
+                width: 80%;
+            }
+            h2{
+                font-size: 20px;
+                text-transform: uppercase;
+                color:#a03535;
+            }
+            p{
+                margin: 10px 0;
+                font-size: 16px;
+            }
+            input{
+                display: block;
+                margin-bottom:10px;
+                font-size: 18px;
+                padding: 3px;
+                outline: none;
+                border:  2px solid #a03535;
+            }
+            button{
+                padding: 5px 15px;
+                font-size: 20px;
+                background-color: #a03535;
+                border: 2px solid #a03535;
+                color: white;
+                
+                transition: color 1s,background-color 1s;
+                &:hover{
+                    
+                    background-color: white;
+                    color:black;
+                }
+            }
+        }
+    }
+}
+@keyframes bgmove{
+    0%{background-position: left center}
+    50%{background-position: right center}
+    100%{background-position: left center}
+}
+input.ng-valid{
+    border:  2px solid #299b45 !important;
+}
+input.ng-invalid{
+    border:  2px solid #a03535 !important;
+}
+.error{
+    color: #a03535;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.or{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100px;
+    height: 100px;
+    background-color: #a03535;
+    color:white;
+    padding: 5px;
+    font-size: 30px;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

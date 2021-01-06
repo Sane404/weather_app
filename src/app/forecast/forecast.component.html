@@ -1,0 +1,110 @@
+<div class="container">
+
+    <div class="svg_and_pics">
+
+        <svg baseprofile="tiny" fill="white" height="400" stroke="black" stroke-linecap="round" stroke-linejoin="round"
+            stroke-width="1" fill='#a03535' version="1.2" width="400" xmlns="http://www.w3.org/2000/svg">
+            <g class="svg" [style.transform]="translate"></g>
+        </svg>
+        <button class='hideImages' (click)='hideImg($event)'>Hide Images</button>
+        <div class="pixabay_images">
+            <img [src]='img' *ngFor='let img of pixabay_images;let index = index' [class.mainImage]='index == 0'
+                [class.secondaryImage]='index !=0' (click)='swapImg($event)'>
+        </div>
+    </div>
+    <div class="forecast">
+
+        <div class="data" *ngFor='let item of forecastData;let index = index' [class.today]='index == 0'
+            [class.forecast_weather]='index !=0'>
+            <div class="today_full_wrap" *ngIf='index == 0'>
+
+                <!-- <h2>Today</h2> -->
+                <div class="today_weather_wrap">
+                    <div class="morn __time_of_day">
+                        <div class="title">Morning</div>
+                        <div class="temp"> {{item.temp.morn - item.temp.morn % 1 }} &#8451;</div>
+                    </div>
+                    <div class="day __time_of_day">
+                        <div class="title">Day</div>
+                        <div class="temp">{{item.temp.day - item.temp.day % 1 }} &#8451;</div>
+
+                    </div>
+                    <div class="eve __time_of_day">
+                        <div class="title">Evening</div>
+                        <div class="temp">{{item.temp.eve - item.temp.eve % 1 }} &#8451;</div>
+
+                    </div>
+                    <div class="night __time_of_day">
+                        <div class="title">Night</div>
+                        <div class="temp">{{item.temp.night - item.temp.night % 1 }} &#8451;</div>
+                    </div>
+                </div>
+                <div class="current_time">
+                    <div class="location">
+                        <div class="country">{{data.country}},</div>
+                        <div class="capital"> {{data.capital}}</div>
+                    </div>
+                    <div class="time">
+                        {{date}}
+                    </div>
+                </div>
+                <div class="today_info">
+                    <div class="date">
+                        <div class="full_date">{{item.this_day.day_number}} {{item.this_day.month}}
+                            {{item.this_day.year}}</div>
+                        <div class="day_name">{{item.this_day.day}}</div>
+                    </div>
+                    <div class="weather">
+                        <div class="icon">
+                            <img [src]='item.weather[0].icon' [title]='item.weather[0].main'>
+                        </div>
+                        <div class="temperature">
+                            <i class="fas fa-thermometer-half"></i>
+                            <div class="temperature_stats">{{item.temp.min - item.temp.min % 1 }} &#8451; -
+                                {{item.temp.max - item.temp.max % 1 }} &#8451; </div>
+                        </div>
+                        <div class="wind">
+                            <i class="fas fa-wind"></i>
+                            <div class="wind_stats">{{item.wind_speed - item.wind_speed % 1}} m/s</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="forecast_full_wrap" *ngIf='index !=0'>
+                <div class="date">
+                    <div class="full_date">{{item.this_day.day_number}} {{item.this_day.month}} {{item.this_day.year}}
+                    </div>
+                    <div class="day_name">{{item.this_day.day}}</div>
+                </div>
+                <div class="weather">
+                    <div class="icon">
+                        <img [src]='item.weather[0].icon' [title]='item.weather[0].main'>
+                    </div>
+
+                    <div class="temperature">
+                        <div class="title">Temperature</div>
+                        <hr>
+                        <div class="temperature_stats">{{item.temp.min - item.temp.min % 1 }} &#8451; - {{item.temp.max
+                            - item.temp.max % 1 }} &#8451; </div>
+                    </div>
+
+                    <div class="wind">
+                        <div class="title">Wind</div>
+                        <hr>
+                        <div class="wind_stats">{{item.wind_speed - item.wind_speed % 1}} m/s</div>
+                    </div>
+                    <div class="humidity">
+                        <div class="title">Humidity</div>
+                        <hr>
+                        <div class="humidity_stats">{{item.humidity}} %</div>
+                    </div>
+                    <div class="pressure">
+                        <div class="title">Pressure</div>
+                        <hr>
+                        <div class="pressure_stats">{{item.pressure}} hPa</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

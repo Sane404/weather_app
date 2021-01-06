@@ -1,0 +1,28 @@
+<nav>
+    <div class="left_side">
+        <div class="text_box">
+            <h2>Weather in europe capitals</h2>
+            <p>Check weather in capitals of europe by using an SVG map</p>
+            <button (click)='toLeft()'>To map</button>
+        </div>
+
+    </div>
+
+
+    <div class="right_side">
+        <div class="text_box">
+            <h2>Weather in any city</h2>
+            <p>Type in city you want to look into and press go</p>
+            <form [formGroup]='cityForm' (ngSubmit)='submit(cityForm)'>
+                <input type="text" placeholder="Kiev" formControlName='city'>
+                <div class="error" *ngIf='city.errors?.minlength'>Min 3 symbols</div>
+                <div class="error" *ngIf='!city.pristine && (city.errors?.pattern || city.errors?.required)'>Invalid
+                    input</div>
+                <button>Go</button>
+            </form>
+        </div>
+    </div>
+    <div class="or">
+        OR
+    </div>
+</nav>

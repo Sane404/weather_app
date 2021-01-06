@@ -1,0 +1,34 @@
+.container{
+    width: 100%;
+    height: calc(100vh - 44px);
+    .wrap{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        h2{
+            text-align: center;
+            margin: 10px 0;
+            text-transform: uppercase;
+            
+        }
+        .asset{
+            width: 60%;
+            margin: 0 auto;
+            @media(max-width:600px){
+                width: 100%;
+                padding: 10px;
+            }
+            h3{
+                color:#a03535;
+                font-size: 30px;
+            }
+            p{
+                margin: 10px 0;
+                font-size: 20px;
+                a{
+                    color:#a03535;
+                }
+            }
+        }
+    }
+}
