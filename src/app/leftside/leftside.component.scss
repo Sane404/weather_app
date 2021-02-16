@@ -5,3 +5,10 @@
     }
 }
 
+path{
+    cursor: pointer;
+    transition: fill .5s;
+}
+path:hover{
+    fill:red;
+}
